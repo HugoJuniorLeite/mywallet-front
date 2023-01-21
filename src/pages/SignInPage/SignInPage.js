@@ -2,7 +2,6 @@ import axios from "axios"
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
 
-
 export default function SignInPage(){
 
 const [form,setForm] = React.useState({
@@ -11,8 +10,6 @@ const [form,setForm] = React.useState({
 })
 
 const [token,setToken] =React.useState()
-
-const [user, setUser] = React.useState({})
 
 const navigate = useNavigate()
 
@@ -27,18 +24,13 @@ console.log(body)
 axios.post("http://localhost:5006/sign-in",body)
 
 .then(res=>{
-
     const teste =res.data
     setToken(res.data)
 
-    console.log(teste,"teste")
-    console.log(res)
      setForm({
          email:"",
          password:""
      })
-
-    console.log("foi")
 
     navigate('/home')
 })
