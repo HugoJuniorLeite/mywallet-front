@@ -2,9 +2,7 @@ import axios from "axios"
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
 
-
 export default function SignUpPage(){
-
 
     const [form, setForm] = React.useState({
         username:"",
@@ -18,8 +16,7 @@ export default function SignUpPage(){
     function handleLogin(e){
         e.preventDefault(e)
 
-        const body =form
-        axios.post('http://localhost:5006/sign-up',body)
+        axios.post('http://localhost:5006/sign-up',form)
 
         .then(res=>{
             
@@ -43,15 +40,14 @@ export default function SignUpPage(){
         
         <input name="username" onChange={handleForm} value={form.username} placeholder="Nome" ></input>
         <input name= "email" onChange={handleForm} value={form.email} placeholder="E-mail"></input>
-        <input name="password" onChange={handleForm} value={form.password} placeholder="Senha"></input>
-        <input name="repeatPassword" onChange={handleForm} value={form.repeatPassword} placeholder="Confirmar a senha"></input>
+        <input name="password" type="password" onChange={handleForm} value={form.password} placeholder="Senha"></input>
+        <input name="repeatPassword" type="password" onChange={handleForm} value={form.repeatPassword} placeholder="Confirmar a senha"></input>
 
         <button type="submit">Entrar</button>
     <Link to="/">Já tem uma conta? Entre agora!!</Link>
     </form>
     
     </div>
-
     )
     
     }

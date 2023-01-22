@@ -3,9 +3,11 @@ import HomePage from "./pages/HomePage/HomePage";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import TransactionsPage from "./pages/TransactionsPage/TransactionsPage";
+import { AuthProvider } from "./providers/auth";
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
 
     <Routes>
@@ -19,6 +21,7 @@ function App() {
     </Routes>
     
     </BrowserRouter>
+    </AuthProvider>
   )
 }
 

@@ -1,6 +1,7 @@
 import axios from "axios"
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../../providers/auth"
 
 export default function SignInPage(){
 
@@ -9,23 +10,17 @@ const [form,setForm] = React.useState({
     password:''
 })
 
-const [token,setToken] =React.useState()
+const {setUser}= useAuth()
 
 const navigate = useNavigate()
 
 function handleLogin(e){
 e.preventDefault()
 
-console.log(form)
+axios.post("http://localhost:5006/sign-in",form)
 
-const body =form
-
-console.log(body)
-axios.post("http://localhost:5006/sign-in",body)
-
-.then(res=>{
-    const teste =res.data
-    setToken(res.data)
+.then(res=>{localStorage.setItem('user', JSON.stringify(res.data));
+    setUser(res.data)
 
      setForm({
          email:"",
@@ -50,8 +45,7 @@ setForm({
         <form onSubmit={handleLogin}>
         
             <input name= "email" onChange={handleForm} value={form.email} placeholder="E-mail"></input>
-
-            <input name="password" onChange={handleForm} value={form.password} placeholder="Senha"></input>
+            <input name="password" type="password" onChange={handleForm} value={form.password} placeholder="Senha"></input>
             
             <button type="submit">Entrar</button>
         <Link to="/cadastro">Primeira vez? Cadastre-se!</Link>
