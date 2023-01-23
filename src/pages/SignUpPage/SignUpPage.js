@@ -1,6 +1,7 @@
 import axios from "axios"
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
+import styled from "styled-components"
 
 export default function SignUpPage(){
 
@@ -34,7 +35,7 @@ export default function SignUpPage(){
     
     return(
     
-        <div>
+        <ContainerSingUp>
         <h1>MyWallet</h1>
         <form onSubmit={handleLogin}>
         
@@ -47,7 +48,22 @@ export default function SignUpPage(){
     <Link to="/">Já tem uma conta? Entre agora!!</Link>
     </form>
     
-    </div>
+    </ContainerSingUp>
     )
     
     }
+
+
+    const ContainerSingUp = styled.main`
+    margin-top: 9.5rem;
+    h1{
+        font-family: "Saira Stencil One";
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 5rem;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom:2.8rem;
+    }
+    `
+

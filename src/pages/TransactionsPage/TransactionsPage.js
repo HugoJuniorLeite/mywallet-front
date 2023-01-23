@@ -37,8 +37,12 @@ export default function TransactionsPage(){
     flex-direction:column;
 
     p{
-        color:red;
-        align-items:center;
+        font-family: "Raleway";
+        font-size: 2.6rem;
+        font-weight: 700;
+        line-height: 3.1rem;
+        letter-spacing: 0em;
+        color:var(--white);
         padding: 0 0 4rem 2.4rem;
     }
     `

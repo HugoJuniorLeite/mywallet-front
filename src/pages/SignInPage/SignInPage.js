@@ -1,6 +1,7 @@
 import axios from "axios"
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
+import styled from "styled-components"
 import { useAuth } from "../../providers/auth"
 
 export default function SignInPage(){
@@ -40,7 +41,7 @@ setForm({
 }
 
     return(
-        <div>
+        <ContainerSingIn>
             <h1>MyWallet</h1>
         <form onSubmit={handleLogin}>
         
@@ -51,7 +52,20 @@ setForm({
         <Link to="/cadastro">Primeira vez? Cadastre-se!</Link>
         </form>
         
-        </div>
+        </ContainerSingIn>
     )
     
     }
+
+    const ContainerSingIn = styled.main`
+    margin-top: 15.9rem;
+    h1{
+        font-family: "Saira Stencil One";
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 5rem;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom:2.4rem;
+    }
+    `

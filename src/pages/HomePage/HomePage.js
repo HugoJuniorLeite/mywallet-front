@@ -18,22 +18,8 @@ const navigate =useNavigate()
 
     function transactionsList(){
 
-    const token = user.token
-
-        console.log(user)
-    
-        const config ={
-            headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        }
-    
-   // apiTransaction.getTransactions(config)
-    
-
-   axios.get("http://localhost:5006/transactions",config)
-   .then(res=>{
-        console.log(res.data)
+   apiTransaction.getTransactions(user.token)
+   .then(res=>{    
         setTransactions(res.data)
     })
     .catch(err =>{console.log(err.message)})
@@ -49,18 +35,29 @@ navigate("/nova-entrada")
 function outflow(){
 
     setType("outflow")
-
     navigate("/nova-saida")
-    }
+    
+}
 
 return(
+
 <ContainerHome>
-<ul>
-<li>
+
+<ContainerHeader>
+
+
+<div>
+<span>
 Olá, {user.username}
+</span>
+</div>
+<div>
+<span>
 <ion-icon name="log-out-outline"></ion-icon>
-</li>
-</ul>
+</span>
+</div>
+
+</ContainerHeader>
 
 <SectionTransactions>
 
@@ -84,10 +81,10 @@ Olá, {user.username}
     </Button>
     
     <Button onClick={outflow}>
-    <Link to="/nova-saida">
+   
     <ion-icon name="remove-circle-outline"></ion-icon>
     <p>Nova saída</p>
-    </Link>
+   
     </Button>
 
 </SectionType>
@@ -99,15 +96,39 @@ const ContainerHome = styled.main`
 display:flex;
 flex-direction:column;
 align-items:center;
-li{ display:flex;
-justify-content:flex-start
+
+`
+
+
+const ContainerHeader = styled.header`
+display:flex;
+justify-content:space-between;
+width:32.7rem;
+height:3.1rem;
+margin-bottom:4.5rem;
+div{
+    margin-top: 2.5rem;
+}
+span{
+    font-family: "Raleway";
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 3.1rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color:var(--white);
+}
+span ion-icon{
+    height: 2.4rem;
+    width: 2.3rem;
 }
 `
+
 const SectionTransactions = styled.section`
 width: 32.6rem;
 height:44.6rem;
 background-color:var(--white);
-margin: 2.2rem 0 1.3rem 0;
+margin: 0 0 1.3rem 0;
 p{
     text-align:center;
 }
@@ -120,7 +141,7 @@ justify-content:center;
 
 const Button = styled.button`
     width: 15.5rem;
-    height:14.4rem;
+    height:11.4rem;
     background-color:var(--light-purple);
     color:var(--white);
     :nth-child(1){
@@ -130,7 +151,7 @@ ion-icon{
     width: 2.5rem;
     height:2.5rem;
     padding: 0 0.8rem 3.1rem 0;
-    margin: -2.5rem 0 0 -10.8rem;
+    margin: 0 0 0 -10.8rem;
     color:var(--white);
 }
     p{  
@@ -144,8 +165,5 @@ ion-icon{
         letter-spacing: 0em;
         text-align: left;
         color:var(--white);
-    }
-    a{
-        text-decoration:none;
     }
     `

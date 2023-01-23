@@ -71,7 +71,7 @@ html{
 	--blue:#52B6FF;
 	--dark-blue:#126BA5;
 	--light-gray:#EBEBEB;
-	--gray:#E5E5E5;
+	--gray:#C6C6C6;
 	--dark-gray:#CFCFCF;
 	--green:#8FC549;
 	--light-black:#666666;
@@ -98,33 +98,40 @@ html{
 	}
 	input{
 		border:0.1rem solid var(--border-input);
-		margin-bottom: 1.3rem;	
-		&::placeholder{
-			color:var(--black);	
+		margin-bottom: 1.3rem;
+		color:var(--black);	
 			font-size: 2rem;
-			line-height: 2.5rem;
+			font-weight: 400;
+			line-height: 2.3rem;
 			letter-spacing: 0em;
 			text-align: left;
 			padding-left:1.1rem;
+			font-family: "Raleway";	
+		&::placeholder{
+			color:var(--black);	
 	}
 		}
 	button{
 		background-color:var(--light-purple);
 		color: var(--white);
-		font-size: 2.1rem;
-		line-height: 2.6rem;
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 2.3rem;
 		letter-spacing: 0em;
 		text-align: center;
+		font-family: "Raleway";
 	}
 
 	a{
         text-decoration: none;
 		color:var(--white);
-		font-size: 1.4rem;
-		line-height: 1.7rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.8rem;
 		letter-spacing: 0em;
 		text-align: center;
         margin-top:3.2rem;
+		font-family: "Raleway";
 	}
 	
 }
