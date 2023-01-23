@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState } from "react"
-import { scryRenderedComponentsWithType } from "react-dom/test-utils"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../providers/auth"
 
@@ -56,8 +55,24 @@ const config ={
 
         <>
         <form onSubmit={handleInsert}>
-        <input name="price" onChange={handleForm} value={form.price} type="number" placeholder="Valor"></input>
-        <input name="description" onChange={handleForm} value={form.description} type="text" placeholder="Descrição"></input>
+        <input
+        name="price" 
+        onChange={handleForm} 
+        value={form.price} 
+        type="number" 
+        placeholder="Valor"
+        required>
+        </input>
+        
+        <input 
+        name="description" 
+        onChange={handleForm} 
+        value={form.description} 
+        type="text" 
+        placeholder="Descrição"
+        required>
+            
+        </input>
         <button type="submit" >Salvar entrada</button>
         </form>
         </>

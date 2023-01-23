@@ -54,8 +54,24 @@ const config ={
 
         <>
         <form onSubmit={handleInsert}>
-        <input name="price" onChange={handleForm} value={form.price} type="number" placeholder="Valor"></input>
-        <input name="description" onChange={handleForm} value={form.description} type="text" placeholder="Descrição"></input>
+        <input 
+        name="price" 
+        onChange={handleForm} 
+        value={form.price} 
+        type="number" 
+        placeholder="Valor"
+        required>
+        </input>
+
+        <input 
+        name="description" 
+        onChange={handleForm} 
+        value={form.description} 
+        type="text" 
+        placeholder="Descrição"
+        required>
+        </input>
+        
         <button type="submit" >Salvar saída</button>
         </form>
         </>

@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 
 export default function Transaction({type, price, description, date}){
+
+
     return(
         
         <ContainerList>
@@ -9,9 +11,7 @@ export default function Transaction({type, price, description, date}){
             <span>{date}</span>
             <span>{description}</span>
             </div>
-            <span>{price}</span>
-                
-            
+            <span>{price} </span>           
         </ContainerList>
     )
 }

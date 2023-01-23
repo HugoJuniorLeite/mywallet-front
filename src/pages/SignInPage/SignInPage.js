@@ -45,8 +45,21 @@ setForm({
             <h1>MyWallet</h1>
         <form onSubmit={handleLogin}>
         
-            <input name= "email" onChange={handleForm} value={form.email} placeholder="E-mail"></input>
-            <input name="password" type="password" onChange={handleForm} value={form.password} placeholder="Senha"></input>
+            <input 
+            name= "email" 
+            onChange={handleForm} 
+            value={form.email} 
+            placeholder="E-mail"
+            required>
+            </input>
+
+            <input 
+            name="password" 
+            type="password" 
+            onChange={handleForm} 
+            value={form.password} 
+            placeholder="Senha"
+            required></input>
             
             <button type="submit">Entrar</button>
         <Link to="/cadastro">Primeira vez? Cadastre-se!</Link>

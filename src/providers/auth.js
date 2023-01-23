@@ -19,12 +19,6 @@ useEffect(()=>{
     if(userStorage){
         setUser(JSON.parse(userStorage))
     }
-    //else{
-      //  setToken({
-        //    token:""
-       // })
-   // }
-
 },[])
 
 return(
