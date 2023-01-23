@@ -1,13 +1,13 @@
 
 
-export default function Transaction({type, value, description, date}){
+export default function Transaction({type, price, description, date}){
     return(
         
         <li>
             <span>
             {date}
             {description}
-            {value}
+            {price}
             </span>
         </li>
     )

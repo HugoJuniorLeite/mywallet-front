@@ -17,7 +17,7 @@ const navigate = useNavigate()
 function handleLogin(e){
 e.preventDefault()
 
-axios.post("http://localhost:5006/sign-in",form)
+axios.post("http://localhost:5006/sign-in",form)    
 
 .then(res=>{localStorage.setItem('user', JSON.stringify(res.data));
     setUser(res.data)

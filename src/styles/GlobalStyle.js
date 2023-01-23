@@ -92,13 +92,13 @@ html{
 	input, button{
 		box-sizing: border-box;
 		border-radius:0.5rem;
-		width:30.3rem;
-		height:4.5rem;
+		width:32.6rem;
+		height:5.8rem;
 
 	}
 	input{
 		border:0.1rem solid var(--border-input);
-		margin-bottom: 0.6rem;	
+		margin-bottom: 1.3rem;	
 		&::placeholder{
 			color:var(--black);	
 			font-size: 2rem;

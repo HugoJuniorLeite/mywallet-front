@@ -11,6 +11,8 @@ export const AuthProvider = (props) =>{
         token:''
     })
 
+    const [type,setType] =React.useState("")
+
 useEffect(()=>{
 
     const userStorage = localStorage.getItem('user');
@@ -26,7 +28,7 @@ useEffect(()=>{
 },[])
 
 return(
-    <AuthContext.Provider value = {{user,setUser}}>
+    <AuthContext.Provider value = {{user,setUser,type,setType}}>
         {props.children}
     </AuthContext.Provider>
 )
